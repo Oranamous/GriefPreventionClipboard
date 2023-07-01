@@ -1,0 +1,22 @@
+name: GriefPreventionClipboard
+version: '${project.version}'
+main: io.github.oranamous.griefpreventionclipboard.GriefPreventionClipboard
+api-version: '1.20'
+commands:
+  copyperms:
+    description: Copies a claim's permissions.
+    usage: /copyperms
+    aliases: [ copyclaim ]
+    permission: griefpreventionclipboard.copyperms
+  pasteperms:
+    description: Pastes permissions to a claim.
+    usage: /pasteperms
+    aliases: [ pasteclaim ]
+    permission: griefpreventionclipboard.pasteperms
+permissions:
+  griefpreventionclipboard.copyperms:
+    description: Grants permission to copy perms.
+    default: true
+  griefpreventionclipboard.pasteperms:
+    description: Grants permission to paste perms.
+    default: true
