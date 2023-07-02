@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -98,6 +99,8 @@ public final class GriefPreventionClipboard extends JavaPlugin {
         clipboard.containers.forEach((builder) -> claim.setPermission(builder, ClaimPermission.Inventory));
         clipboard.accessors.forEach((builder) -> claim.setPermission(builder, ClaimPermission.Access));
         clipboard.managers.forEach((builder) -> claim.setPermission(builder, ClaimPermission.Manage));
+        claim.modifiedDate = new Date();
+        GriefPrevention.instance.dataStore.saveClaim(claim);
     }
 
     public Clipboard getPlayerClipBoard(Player player) {
